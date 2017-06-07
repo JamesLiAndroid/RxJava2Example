@@ -1,5 +1,6 @@
 package com.shiliukeji.xc_lsy.rxjavalearning;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnErrorHandler;
     private Button btnThreadSwitch;
 
+    private Button btnDaggerTest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnErrorHandler.setOnClickListener(this);
         btnThreadSwitch = (Button) findViewById(R.id.btn_thread_switch);
         btnThreadSwitch.setOnClickListener(this);
+
+        btnDaggerTest = (Button) findViewById(R.id.btn_to_dagger);
+        btnDaggerTest.setOnClickListener(this);
     }
 
 
@@ -94,7 +100,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_thread_switch:
                 threadSwitch();
                 break;
+            case R.id.btn_to_dagger:
+                toDagger();
+                break;
         }
+    }
+
+    private void toDagger() {
+        Intent intent = new Intent(MainActivity.this, DaggerTestActivity.class);
+        startActivity(intent);
     }
 
     private void threadSwitch() {

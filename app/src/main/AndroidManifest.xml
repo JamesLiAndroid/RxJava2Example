@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DaggerTestActivity" />
+        <activity android:name=".pdagger.main.Test2DaggerActivity"></activity>
     </application>
 
 </manifest>
